@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Especialidades de Elísia Almeida — Psicoterapia Clínica, TCC, Neuropsicologia e Neurociência. CRP 17/4079."/>
+<title>Especialidades · Elísia Almeida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cr:#F2E8EE;--cr-lt:#FBF6F8;--cr-dk:#EDD8E4;
+  --ma:#8B5E3C;--ma-dk:#6B4428;
+  --ro:#C8A49A;--ro-lt:#F8E8F0;--ro-dk:#A8766C;
+  --ou:#C4A47C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cr-lt);color:var(--ma-dk);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 72px}
+.logo{font-family:'Lora',serif;font-style:italic;font-size:16px;color:var(--ma-dk);text-decoration:none;letter-spacing:.02em}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12.5px;color:var(--ma);opacity:.5;text-decoration:none;letter-spacing:.06em;transition:opacity .2s}
+.nav-links a:hover,.nav-links a.active{opacity:1}
+.nav-cta{opacity:1!important;border:1px solid rgba(139,94,60,.4);border-radius:30px;padding:7px 18px;transition:background .2s,color .2s!important}
+.nav-cta:hover{background:var(--ma)!important;color:var(--cr-lt)!important;border-color:var(--ma)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ma);transition:all .25s}
+
+/* COMMON */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--ro)}
+.sec-label{font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ro)}
+.sec-title{font-family:'Lora',serif;font-size:36px;font-weight:400;color:var(--ma-dk);line-height:1.25}
+.btn-lt{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--ma-dk);background:var(--cr-lt);border:none;border-radius:30px;padding:14px 32px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap;display:inline-block}
+.btn-lt:hover{background:var(--cr)}
+.orn{color:rgba(200,164,154,.5);font-size:16px;letter-spacing:.2em}
+
+/* PAGE HERO */
+.pg-hero{padding:160px 80px 80px;background:var(--cr-lt);text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;position:relative;overflow:hidden}
+.pg-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--ro-lt) 0%,transparent 65%);opacity:.4;pointer-events:none}
+.pg-hero .eyebrow{position:relative;z-index:1}
+.pg-hero h1{font-family:'Lora',serif;font-style:italic;font-size:clamp(40px,6vw,72px);font-weight:400;color:var(--ma-dk);line-height:1.1;position:relative;z-index:1}
+.pg-hero-line{width:40px;height:1.5px;background:var(--ou);position:relative;z-index:1}
+.pg-hero p{font-size:16px;font-weight:300;color:var(--ma);line-height:1.8;max-width:520px;opacity:.8;position:relative;z-index:1}
+
+/* ESPECIALIDADES LIST */
+.esp-list{padding:0 80px 56px}
+.esp-item{display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid rgba(196,164,124,.2)}
+.esp-item:first-child{border-top:1px solid rgba(196,164,124,.2)}
+.esp-item:last-child{border-bottom:none}
+.esp-num{padding:52px 0;display:flex;align-items:flex-start;justify-content:flex-start}
+.esp-num span{font-family:'Lora',serif;font-style:italic;font-size:32px;color:var(--ro);opacity:.6;line-height:1}
+.esp-body{padding:52px 0 52px 40px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.esp-body h2{font-family:'Lora',serif;font-size:28px;font-weight:400;color:var(--ma-dk);line-height:1.2}
+.esp-detail{display:flex;flex-direction:column;gap:20px}
+.esp-detail p{font-size:15px;font-weight:300;color:var(--ma);line-height:1.85;opacity:.9}
+.esp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tag{font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--ma);background:var(--ro-lt);border-radius:20px;padding:5px 14px}
+
+/* ABORDAGEM */
+.abordagem{padding:96px 80px;background:linear-gradient(var(--cr-lt),var(--cr) 120px)}
+.abord-in{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+.abord-hd{display:flex;flex-direction:column;gap:12px}
+.abord-text{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.abord-text p{font-size:15px;font-weight:300;color:var(--ma);line-height:1.9;opacity:.9}
+
+/* PARA QUEM É */
+.quem{padding:96px 80px;background:var(--cr-lt)}
+.quem-hd{text-align:center;margin-bottom:56px;display:flex;flex-direction:column;gap:14px;align-items:center}
+.quem-hd p{font-size:15px;font-weight:300;color:var(--ma);opacity:.8;max-width:480px;line-height:1.8}
+.quem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.quem-card{background:var(--cr);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:12px}
+.quem-card h3{font-family:'Lora',serif;font-size:19px;font-weight:400;color:var(--ma-dk);line-height:1.3}
+.quem-card p{font-size:13.5px;font-weight:300;color:var(--ma);line-height:1.75;opacity:.85}
+
+/* O QUE ESPERAR */
+.esperar{padding:96px 80px;background:var(--ro-lt)}
+.esperar-in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.esperar-hd{display:flex;flex-direction:column;gap:16px;position:sticky;top:120px}
+.esperar-hd p{font-size:15px;font-weight:300;color:var(--ma);opacity:.85;line-height:1.85}
+.esperar-list{display:flex;flex-direction:column;gap:8px}
+.esperar-item{display:flex;gap:24px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(196,164,124,.2)}
+.esperar-item:last-child{border-bottom:none}
+.esperar-n{font-family:'Lora',serif;font-style:italic;font-size:24px;color:var(--ro);opacity:.7;line-height:1.3;flex-shrink:0;width:36px}
+.esperar-c h3{font-family:'Lora',serif;font-size:19px;font-weight:400;color:var(--ma-dk);margin-bottom:8px}
+.esperar-c p{font-size:14px;font-weight:300;color:var(--ma);line-height:1.8;opacity:.85}
+
+/* CTA */
+.cta-band{background:var(--ma-dk);padding:96px 80px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px}
+.cta-band blockquote{font-family:'Lora',serif;font-style:italic;font-size:clamp(22px,3.2vw,38px);font-weight:400;color:var(--cr-lt);line-height:1.45;max-width:620px}
+
+footer{background:var(--ma-dk);padding:64px 80px 0}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;padding-bottom:48px;max-width:900px;margin:0 auto}
+.f-brand-name{font-family:'Lora',serif;font-style:italic;font-size:22px;color:var(--cr-lt);margin-bottom:14px}
+.f-brand-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.8}
+.f-col-title{font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cr-lt);opacity:.5;margin-bottom:20px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.f-col ul a{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.f-col ul a:hover{color:var(--cr-lt)}
+.f-contact{display:flex;flex-direction:column;gap:12px}
+.f-contact-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.5;text-decoration:none;transition:color .2s}
+.f-contact-item:hover{color:var(--cr-lt)}
+.f-contact-item svg{width:15px;height:15px;stroke:var(--ro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.f-copy{font-size:11.5px;color:rgba(255,255,255,.25);letter-spacing:.04em}
+
+/* WA FLUTUANTE */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:20px 28px}
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(248,244,238,.98);padding:20px 28px 28px;gap:18px;border-bottom:1px solid rgba(196,164,124,.2)}
+  .pg-hero{padding:120px 28px 60px}
+  .esp-list{padding:0 28px 64px}
+  .esp-item{grid-template-columns:1fr}
+  .esp-num{padding:40px 0 0}
+  .esp-body{grid-template-columns:1fr;gap:16px;padding:16px 0 40px}
+  .abordagem{padding:64px 28px}
+  .abord-text{grid-template-columns:1fr}
+  .quem{padding:64px 28px}
+  .quem-grid{grid-template-columns:1fr}
+  .esperar{padding:64px 28px}
+  .esperar-in{grid-template-columns:1fr;gap:40px}
+  .esperar-hd{position:static}
+  .cta-band{padding:64px 28px}
+  footer{padding:40px 28px 0}
+  .f-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .wa-float{bottom:20px;right:20px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">Elísia Almeida</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="abordagens.html" class="active">Abordagem</a></li>
+    <li><a href="atendimento.html">Especialidade</a></li>
+    <li><a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="nav-cta">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="pg-hero">
+  <p class="eyebrow">Abordagens</p>
+  <h1>Como eu trabalho</h1>
+  <div class="pg-hero-line"></div>
+  <p>Sou psicóloga de base cognitivo-comportamental e conduzo cada atendimento integrando neuropsicologia e neurociência. Um cuidado pensado para mulheres — que une ciência e escuta para promover transformações reais.</p>
+</section>
+
+<div class="esp-list">
+
+  <div class="esp-item">
+    <div class="esp-num"><span>01</span></div>
+    <div class="esp-body">
+      <h2>TCC — Terapia Cognitivo-Comportamental</h2>
+      <div class="esp-detail">
+        <p>A TCC é a base do meu trabalho — uma das abordagens com maior embasamento científico. Juntas, investigamos a relação entre os seus pensamentos, emoções e comportamentos, identificando padrões que pesam no dia a dia e construindo estratégias práticas para transformá-los.</p>
+        <p>No cuidado com mulheres, esse trabalho ganha um olhar atento às pressões da maternidade, da carreira, dos relacionamentos e da autocobrança — temas que muitas vezes alimentam ansiedade, culpa e baixa autoestima. A terapia se torna um espaço para ressignificar essas crenças e recuperar o protagonismo da própria vida.</p>
+        <div class="esp-tags">
+          <span class="tag">Baseada em evidências</span>
+          <span class="tag">Ansiedade</span>
+          <span class="tag">Autoestima</span>
+          <span class="tag">Autocobrança</span>
+          <span class="tag">Reestruturação cognitiva</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="esp-item">
+    <div class="esp-num"><span>02</span></div>
+    <div class="esp-body">
+      <h2>Neuropsicologia</h2>
+      <div class="esp-detail">
+        <p>A neuropsicologia me permite enxergar como funcionam a sua memória, atenção, organização e funções executivas — e como tudo isso se conecta às suas emoções e à sua rotina. Esse olhar enriquece a TCC, tornando as intervenções mais precisas e personalizadas.</p>
+        <p>É especialmente valioso para mulheres que vivem a sobrecarga mental do dia a dia: a sensação de estar sempre dividida, o esquecimento, a dificuldade de concentração. Compreender esse funcionamento ajuda a criar estratégias realistas, respeitando os seus limites e a sua forma única de pensar.</p>
+        <div class="esp-tags">
+          <span class="tag">Memória</span>
+          <span class="tag">Atenção</span>
+          <span class="tag">Funções executivas</span>
+          <span class="tag">Sobrecarga mental</span>
+          <span class="tag">Organização</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="esp-item">
+    <div class="esp-num"><span>03</span></div>
+    <div class="esp-body">
+      <h2>Neurociência Aplicada</h2>
+      <div class="esp-detail">
+        <p>A neurociência explica o "porquê" por trás do que sentimos. Entender como o cérebro aprende, se adapta e muda — a chamada neuroplasticidade — dá sentido ao processo terapêutico e mostra que mudar é possível em qualquer fase da vida.</p>
+        <p>Trazer esse conhecimento para a terapia ajuda você a compreender o que acontece no seu corpo e na sua mente em momentos de estresse, ansiedade ou exaustão. Esse entendimento é uma ferramenta poderosa de regulação emocional e de construção de novos hábitos, com mais compaixão por si mesma.</p>
+        <div class="esp-tags">
+          <span class="tag">Neuroplasticidade</span>
+          <span class="tag">Regulação emocional</span>
+          <span class="tag">Estresse</span>
+          <span class="tag">Hábitos</span>
+          <span class="tag">Autocuidado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<section class="abordagem">
+  <div class="abord-in">
+    <div class="abord-hd">
+      <p class="sec-label">Integração</p>
+      <h2 class="sec-title">Como as abordagens se complementam</h2>
+    </div>
+    <div class="abord-text">
+      <p>Não trabalho com uma única abordagem de forma isolada. A riqueza do processo terapêutico está justamente na integração — usar o que cada método tem de melhor, de acordo com o que você precisa em cada momento.</p>
+      <p>A TCC oferece as ferramentas práticas e a estrutura do trabalho. A neuropsicologia aprofunda a compreensão do seu funcionamento. E a neurociência explica os porquês. Tudo isso sustentado por uma escuta atenta às vivências femininas, com vínculo e cuidado genuíno.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quem">
+  <div class="quem-hd">
+    <p class="sec-label">Para quem é</p>
+    <h2 class="sec-title">Temas que acompanho</h2>
+    <p>Se você se reconhece em alguma dessas vivências, a terapia pode ser um espaço de acolhimento e transformação para você.</p>
+  </div>
+  <div class="quem-grid">
+    <div class="quem-card">
+      <h3>Ansiedade e preocupação constante</h3>
+      <p>A mente que não desliga, o coração acelerado, a antecipação do pior. Aprenda a reconhecer e regular esses estados.</p>
+    </div>
+    <div class="quem-card">
+      <h3>Autocobrança e perfeccionismo</h3>
+      <p>A sensação de nunca ser suficiente e a exaustão de tentar dar conta de tudo. Um espaço para aliviar essa pressão interna.</p>
+    </div>
+    <div class="quem-card">
+      <h3>Esgotamento e sobrecarga</h3>
+      <p>O cansaço que não passa com o descanso, a múltipla jornada, a sensação de estar sempre dividida entre papéis.</p>
+    </div>
+    <div class="quem-card">
+      <h3>Autoestima e autoimagem</h3>
+      <p>A relação consigo mesma, a autocrítica e o desejo de se enxergar com mais gentileza e confiança.</p>
+    </div>
+    <div class="quem-card">
+      <h3>Maternidade e transições</h3>
+      <p>As grandes mudanças da vida — maternidade, carreira, relacionamentos — e os sentimentos que vêm com elas.</p>
+    </div>
+    <div class="quem-card">
+      <h3>Relacionamentos</h3>
+      <p>Dificuldades nos vínculos afetivos e familiares, padrões que se repetem e a busca por relações mais saudáveis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="esperar">
+  <div class="esperar-in">
+    <div class="esperar-hd">
+      <p class="sec-label">O processo</p>
+      <h2 class="sec-title">O que você pode esperar</h2>
+      <p>A terapia não oferece respostas prontas, mas constrói com você ferramentas para uma vida mais leve e consciente.</p>
+    </div>
+    <div class="esperar-list">
+      <div class="esperar-item">
+        <div class="esperar-n">01</div>
+        <div class="esperar-c">
+          <h3>Mais clareza mental</h3>
+          <p>Compreender o que sente e por quê, organizando pensamentos que hoje parecem confusos ou avassaladores.</p>
+        </div>
+      </div>
+      <div class="esperar-item">
+        <div class="esperar-n">02</div>
+        <div class="esperar-c">
+          <h3>Regulação emocional</h3>
+          <p>Aprender a lidar com a ansiedade, a culpa e o estresse de forma mais equilibrada, sem se deixar dominar por eles.</p>
+        </div>
+      </div>
+      <div class="esperar-item">
+        <div class="esperar-n">03</div>
+        <div class="esperar-c">
+          <h3>Ferramentas para o dia a dia</h3>
+          <p>Estratégias práticas e baseadas em evidências que você pode aplicar na rotina, dentro e fora das sessões.</p>
+        </div>
+      </div>
+      <div class="esperar-item">
+        <div class="esperar-n">04</div>
+        <div class="esperar-c">
+          <h3>Autoconhecimento profundo</h3>
+          <p>Entender seus padrões, gatilhos e necessidades — e reconhecer a sua força para construir a vida que deseja.</p>
+        </div>
+      </div>
+      <div class="esperar-item">
+        <div class="esperar-n">05</div>
+        <div class="esperar-c">
+          <h3>Mais gentileza consigo</h3>
+          <p>Trocar a autocrítica pela autocompaixão, aprendendo a se tratar com o mesmo cuidado que oferece aos outros.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Agendar consulta">
+  <p class="orn" aria-hidden="true">✦ ✦ ✦</p>
+  <blockquote>"Cada mente é única. Cada processo, também."</blockquote>
+  <p class="orn" aria-hidden="true">✦ ✦ ✦</p>
+  <a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-lt" target="_blank" rel="noopener">Reservar meu horário</a>
+</section>
+
+<footer>
+  <div class="f-grid">
+    <div>
+      <div class="f-brand-name">Elísia Almeida</div>
+      <p class="f-brand-desc">Psicóloga clínica especialista em Psicoterapia Clínica, TCC, Neuropsicologia e Neurociência. Natal - RN.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Menu</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="abordagens.html">Abordagem</a></li>
+        <li><a href="atendimento.html">Especialidade</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Contato</div>
+      <div class="f-contact">
+        <a href="https://wa.me/5584996016500" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11 19.79 19.79 0 0 1 1.61 2.38 2 2 0 0 1 3.58.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l1.49-1.49a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +55 (84) 9 9601-6500
+        </a>
+        <a href="https://instagram.com/psielisiaalmeida" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @psielisiaalmeida
+        </a>
+        <a href="https://www.linkedin.com/in/el%C3%ADsia-almeida-1b5b2143/" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Elísia Almeida
+        </a>
+        <a href="https://www.facebook.com/elisia.almeida.3" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          /elisia.almeida
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span class="f-copy">© 2026 Elísia Almeida. Todos os direitos reservados.</span>
+    <span class="f-copy">Psicóloga · CRP 17/4079</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="wa-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('nav').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

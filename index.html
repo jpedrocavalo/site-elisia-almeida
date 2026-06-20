@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Elísia Almeida — Psicóloga clínica. Psicoterapia, TCC, Neuropsicologia e Neurociência. Atendimento presencial e online. CRP 17/4079."/>
+<title>Elísia Almeida · Psicóloga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cr:#F2E8EE;--cr-lt:#FBF6F8;--cr-dk:#EDD8E4;
+  --ma:#8B5E3C;--ma-dk:#6B4428;
+  --ro:#C8A49A;--ro-lt:#F8E8F0;--ro-dk:#A8766C;
+  --ou:#C4A47C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cr-lt);color:var(--ma-dk);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 72px}
+.logo{font-family:'Lora',serif;font-style:italic;font-size:16px;color:var(--ma-dk);text-decoration:none;letter-spacing:.02em}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12.5px;color:var(--ma);opacity:.5;text-decoration:none;letter-spacing:.06em;transition:opacity .2s}
+.nav-links a:hover,.nav-links a.active{opacity:1}
+.nav-cta{opacity:1!important;border:1px solid rgba(139,94,60,.4);border-radius:30px;padding:7px 18px;transition:background .2s,color .2s!important}
+.nav-cta:hover{background:var(--ma)!important;color:var(--cr-lt)!important;border-color:var(--ma)}
+.nav-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;background:transparent;color:var(--ma);border:1px solid rgba(139,94,60,.35);border-radius:30px;padding:9px 22px;cursor:pointer;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:var(--ma);color:var(--cr-lt)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ma);transition:all .25s}
+
+/* HERO */
+.hero{min-height:100vh;padding:80px 80px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:var(--cr-lt)}
+.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--ro-lt) 0%,transparent 65%);opacity:.5;pointer-events:none}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--ro);margin-bottom:24px;position:relative;z-index:1}
+.hero-name{font-family:'Lora',serif;font-style:italic;font-size:clamp(56px,8vw,100px);font-weight:400;color:var(--ma-dk);line-height:1;margin-bottom:30px;position:relative;z-index:1}
+.hero-line{width:48px;height:1.5px;background:var(--ou);margin:0 auto 30px;position:relative;z-index:1}
+.hero-sub{font-size:16px;font-weight:300;color:var(--ma);line-height:1.8;max-width:460px;margin:0 auto 30px;position:relative;z-index:1;opacity:.8}
+.btns{display:flex;gap:16px;align-items:center;justify-content:center;position:relative;z-index:1;flex-wrap:wrap}
+.btn-p{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--cr-lt);background:var(--ma);border:none;border-radius:30px;padding:14px 32px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-p:hover{background:var(--ma-dk)}
+.btn-s{font-size:13px;color:var(--ma);opacity:.5;text-decoration:none;letter-spacing:.04em;transition:opacity .2s;white-space:nowrap}
+.btn-s:hover{opacity:1}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.35;position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:1}
+.hero-scroll span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ma)}
+.scroll-line{width:1px;height:32px;background:var(--ma)}
+
+/* STATS BAR */
+.stats-bar{background:var(--cr);display:flex;border-top:1px solid rgba(196,164,124,.2);border-bottom:1px solid rgba(196,164,124,.2);flex-wrap:wrap}
+.stat-item{flex:1;min-width:160px;padding:32px 40px;display:flex;align-items:center;gap:18px;border-right:1px solid rgba(196,164,124,.2)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-family:'Lora',serif;font-size:40px;color:var(--ou);line-height:1}
+.stat-l{font-size:12px;font-weight:300;color:var(--ma);letter-spacing:.06em;line-height:1.5;opacity:.8}
+
+/* SERVIÇO PRINCIPAL */
+.servico{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
+.servico-visual{background:var(--ro-lt);display:flex;align-items:center;justify-content:center;padding:72px;position:relative;overflow:hidden}
+.servico-visual::before{content:'';position:absolute;bottom:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(196,164,124,.1)}
+.servico-badge-main{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.servico-circle{width:200px;height:200px;border-radius:50%;border:1px solid rgba(200,164,154,.3);display:flex;align-items:center;justify-content:center;padding:28px}
+.servico-circle-inner{width:100%;height:100%;border-radius:50%;background:var(--cr-lt);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.servico-circle-inner span:first-child{font-family:'Lora',serif;font-style:italic;font-size:13px;color:var(--ro);letter-spacing:.06em}
+.servico-circle-inner strong{font-family:'Lora',serif;font-size:17px;font-weight:400;color:var(--ma-dk);line-height:1.3;text-align:center}
+.servico-comps{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.servico-comp{font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--ma);background:rgba(255,255,255,.6);border-radius:20px;padding:5px 14px;opacity:.8}
+.servico-c{padding:56px 80px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.sec-label{font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ro)}
+.sec-title{font-family:'Lora',serif;font-size:36px;font-weight:400;color:var(--ma-dk);line-height:1.25}
+.servico-c p{font-size:15px;font-weight:300;color:var(--ma);line-height:1.9;max-width:420px;opacity:.9}
+.badge{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(200,164,154,.45);border-radius:30px;padding:8px 18px;font-size:12px;font-weight:400;color:var(--ma);width:fit-content;letter-spacing:.04em}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ro);flex-shrink:0}
+
+/* QUOTE CENTRAL */
+.mid-quote{background:var(--cr-lt);padding:64px 0 80px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px}
+.mid-quote blockquote{font-family:'Lora',serif;font-style:italic;font-size:clamp(20px,3vw,34px);font-weight:400;color:var(--ma);line-height:1.55;max-width:600px}
+.mid-quote .orn{color:var(--ro);font-size:14px;letter-spacing:.2em;opacity:.7}
+
+/* DEPOIMENTOS */
+.dep{padding:48px 80px 96px;background:var(--cr)}
+.dep-hd{text-align:center;margin-bottom:60px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.dep-card{background:var(--cr-lt);border-radius:20px;padding:40px 36px;display:flex;flex-direction:column;gap:24px}
+.dep-quote{font-family:'Lora',serif;font-style:italic;font-size:15px;font-weight:400;color:var(--ma);line-height:1.8;opacity:.9}
+.dep-quote::before{content:'\201C';font-size:32px;color:var(--ro);line-height:0;vertical-align:-12px;margin-right:4px;font-style:normal}
+.dep-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(196,164,124,.2);padding-top:20px}
+.dep-dot{width:36px;height:36px;border-radius:50%;background:var(--ro-lt);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--ro-dk);flex-shrink:0}
+.dep-info{display:flex;flex-direction:column;gap:2px}
+.dep-name{font-size:13px;font-weight:500;color:var(--ma-dk);letter-spacing:.02em}
+.dep-desc{font-size:11.5px;color:var(--ma);opacity:.5;letter-spacing:.04em}
+
+/* ESPECIALIDADES */
+.esp{padding:96px 80px;background:var(--cr-lt)}
+.esp-hd{text-align:center;margin-bottom:60px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.esp-hd p{font-size:15px;font-weight:300;color:var(--ma);opacity:.75;max-width:400px;line-height:1.75}
+.esp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(196,164,124,.15);max-width:1100px;margin:0 auto}
+.esp-card{background:var(--cr-lt);padding:40px 32px;display:flex;flex-direction:column;gap:18px;transition:background .2s}
+.esp-card:hover{background:var(--cr)}
+.esp-dot{width:8px;height:8px;border-radius:50%;background:var(--ro)}
+.esp-card h3{font-family:'Lora',serif;font-size:18px;font-weight:400;color:var(--ma-dk);line-height:1.3}
+.esp-card p{font-size:13px;font-weight:300;color:var(--ma);line-height:1.75;opacity:.8}
+
+/* FOCO */
+.foco{padding:96px 80px;background:var(--ro-lt)}
+.foco-in{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:52px}
+.foco-top{display:flex;flex-direction:column;gap:20px;align-items:center}
+.foco-top p{font-size:15.5px;font-weight:300;color:var(--ma);line-height:1.85;max-width:520px}
+.foco-items{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%}
+.fi{background:rgba(255,255,255,.5);border-radius:16px;padding:32px 28px;text-align:left}
+.fi-t{font-size:14px;font-weight:500;color:var(--ma-dk);margin-bottom:8px;letter-spacing:.02em}
+.fi-d{font-size:13px;font-weight:300;color:var(--ma);line-height:1.7;opacity:.8}
+
+/* CTA */
+.big-quote{background:var(--ma-dk);padding:96px 80px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px}
+.big-quote blockquote{font-family:'Lora',serif;font-style:italic;font-size:clamp(22px,3.2vw,40px);font-weight:400;color:var(--cr-lt);line-height:1.45;max-width:660px}
+.big-quote .reassure{font-size:15px;font-weight:300;color:rgba(255,255,255,.65);line-height:1.8;max-width:520px;margin-top:-8px}
+.orn{color:rgba(200,164,154,.5);font-size:16px;letter-spacing:.2em}
+.btn-lt{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--ma-dk);background:var(--cr-lt);border:none;border-radius:30px;padding:14px 32px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-lt:hover{background:var(--cr)}
+
+/* WA FLUTUANTE */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+footer{background:var(--ma-dk);padding:64px 80px 0}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;padding-bottom:48px;max-width:900px;margin:0 auto}
+.f-brand-name{font-family:'Lora',serif;font-style:italic;font-size:22px;color:var(--cr-lt);margin-bottom:14px}
+.f-brand-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.8}
+.f-col-title{font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cr-lt);opacity:.5;margin-bottom:20px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.f-col ul a{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.f-col ul a:hover{color:var(--cr-lt)}
+.f-contact{display:flex;flex-direction:column;gap:12px}
+.f-contact-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.5;text-decoration:none;transition:color .2s}
+.f-contact-item:hover{color:var(--cr-lt)}
+.f-contact-item svg{width:15px;height:15px;stroke:var(--ro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.f-copy{font-size:11.5px;color:rgba(255,255,255,.25);letter-spacing:.04em}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:20px 28px}
+  .nav-links,.nav-btn{display:none}
+  .nav-toggle{display:flex}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(248,244,238,.98);padding:20px 28px 28px;gap:18px;border-bottom:1px solid rgba(196,164,124,.2)}
+  .hero{padding:100px 28px 60px}
+  .stats-bar{flex-direction:column}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(196,164,124,.2)}
+  .stat-item:last-child{border-bottom:none}
+  .servico{grid-template-columns:1fr}
+  .servico-visual{padding:48px}
+  .servico-c{padding:48px 28px}
+  .dep{padding:64px 28px}
+  .dep-grid{grid-template-columns:1fr}
+  .esp{padding:64px 28px}
+  .esp-grid{grid-template-columns:1fr 1fr}
+  .foco{padding:64px 28px}
+  .foco-items{grid-template-columns:1fr}
+  .big-quote{padding:64px 28px}
+  footer{padding:40px 28px 0}
+  .f-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .wa-float{bottom:20px;right:20px}
+}
+@media(max-width:540px){
+  .esp-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">Elísia Almeida</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="abordagens.html">Abordagem</a></li>
+    <li><a href="atendimento.html">Especialidade</a></li>
+    <li><a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="nav-cta">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow">Psicóloga</p>
+  <h1 class="hero-name">Elísia Almeida</h1>
+  <div class="hero-line"></div>
+  <p class="hero-sub">Um espaço seguro e acolhedor para você se ouvir, cuidar das suas emoções e caminhar com mais leveza. Vamos juntas?</p>
+  <div class="btns">
+    <a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-p" target="_blank" rel="noopener">Quero dar o primeiro passo</a>
+    <a href="sobre.html" class="btn-s">Conhecer mais →</a>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Rolar</span>
+  </div>
+</section>
+
+<section class="servico" id="servico">
+  <div class="servico-visual" aria-hidden="true">
+    <div class="servico-badge-main">
+      <div class="servico-circle">
+        <div class="servico-circle-inner">
+          <span>serviço principal</span>
+          <strong>Psicoterapia<br/>Clínica</strong>
+        </div>
+      </div>
+      <div class="servico-comps">
+        <span class="servico-comp">TCC</span>
+        <span class="servico-comp">Neuropsicologia</span>
+        <span class="servico-comp">Neurociência</span>
+      </div>
+    </div>
+  </div>
+  <div class="servico-c">
+    <p class="sec-label">Serviço principal</p>
+    <h2 class="sec-title">Psicoterapia Clínica</h2>
+    <p>Um processo de autoconhecimento e transformação conduzido em um espaço seguro e acolhedor. Por meio da escuta ativa, exploramos padrões emocionais, crenças e relações que influenciam sua qualidade de vida.</p>
+    <p>O trabalho é enriquecido por TCC, neuropsicologia e neurociência — integrando técnica e humanidade de forma individualizada.</p>
+    <a href="abordagens.html" class="badge">Conhecer a abordagem →</a>
+  </div>
+</section>
+
+<section class="mid-quote" aria-label="Citação">
+  <p class="orn" aria-hidden="true">✦ ✦ ✦</p>
+  <blockquote>"Cuidar de você não é egoísmo. É o começo de tudo."</blockquote>
+  <p class="orn" aria-hidden="true">✦ ✦ ✦</p>
+</section>
+
+<section class="dep" id="depoimentos">
+  <div class="dep-hd">
+    <p class="sec-label">Depoimentos</p>
+    <h2 class="sec-title">O que dizem as pacientes</h2>
+  </div>
+  <div class="dep-grid">
+    <div class="dep-card">
+      <p class="dep-quote">A terapia com a Elísia mudou a forma como eu me relaciono comigo mesma. Finalmente me sinto escutada de verdade, sem julgamentos.</p>
+      <div class="dep-author">
+        <div class="dep-dot">A</div>
+        <div class="dep-info">
+          <span class="dep-name">Ana Paula</span>
+          <span class="dep-desc">Paciente há 2 anos</span>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <p class="dep-quote">Aprendi a entender meus padrões e a lidar com a ansiedade de um jeito que nunca imaginei ser possível. O processo foi transformador.</p>
+      <div class="dep-author">
+        <div class="dep-dot">C</div>
+        <div class="dep-info">
+          <span class="dep-name">Camila</span>
+          <span class="dep-desc">Paciente há 1 ano</span>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <p class="dep-quote">Um espaço realmente seguro. A Elísia tem uma escuta que acolhe sem julgar, e isso fez toda a diferença na minha jornada de autoconhecimento.</p>
+      <div class="dep-author">
+        <div class="dep-dot">M</div>
+        <div class="dep-info">
+          <span class="dep-name">Mariana</span>
+          <span class="dep-desc">Paciente há 8 meses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="esp" id="esp">
+  <div class="esp-hd">
+    <p class="sec-label">No que posso te ajudar</p>
+    <h2 class="sec-title">Se você se reconhece aqui,<br/>este é o seu lugar</h2>
+    <p>Cada mulher chega com a sua história. Talvez você se identifique com alguma destas vivências.</p>
+  </div>
+  <div class="esp-grid">
+    <div class="esp-card">
+      <div class="esp-dot" aria-hidden="true"></div>
+      <h3>Ansiedade e estresse</h3>
+      <p>A mente que não desliga, a preocupação constante e o cansaço que parece não ter fim.</p>
+    </div>
+    <div class="esp-card">
+      <div class="esp-dot" aria-hidden="true"></div>
+      <h3>Autoestima e autocrítica</h3>
+      <p>A sensação de nunca ser suficiente e a dificuldade de se enxergar com gentileza.</p>
+    </div>
+    <div class="esp-card">
+      <div class="esp-dot" aria-hidden="true"></div>
+      <h3>Relacionamentos</h3>
+      <p>Padrões que se repetem, vínculos que pesam e o desejo de relações mais saudáveis.</p>
+    </div>
+    <div class="esp-card">
+      <div class="esp-dot" aria-hidden="true"></div>
+      <h3>Fases de transição</h3>
+      <p>Maternidade, carreira, perdas e recomeços — as grandes mudanças que mexem com tudo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="foco" id="foco">
+  <div class="foco-in">
+    <div class="foco-top">
+      <p class="sec-label">Atendimento</p>
+      <h2 class="sec-title">Cuidado pensado para mulheres</h2>
+      <p>Desenvolvi uma escuta especialmente sintonizada com as vivências femininas — das pressões do cotidiano às grandes transições da vida.</p>
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center">
+        <a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-p" target="_blank" rel="noopener">Vamos conversar?</a>
+        <a href="atendimento.html" class="btn-s">Saber mais →</a>
+      </div>
+    </div>
+    <div class="foco-items">
+      <div class="fi">
+        <div class="fi-t">Escuta acolhedora</div>
+        <div class="fi-d">Um espaço seguro para expressar o que sente, sem julgamentos.</div>
+      </div>
+      <div class="fi">
+        <div class="fi-t">Desenvolvimento pessoal</div>
+        <div class="fi-d">Ferramentas para se conhecer e construir a vida que deseja.</div>
+      </div>
+      <div class="fi">
+        <div class="fi-t">Abordagem científica</div>
+        <div class="fi-d">Base em TCC e neurociência para resultados consistentes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="big-quote" aria-label="Citação destaque">
+  <p class="orn" aria-hidden="true">✦ ✦ ✦</p>
+  <blockquote>"Você não precisa carregar tudo sozinha. Vamos construir juntas um caminho mais leve."</blockquote>
+  <p class="reassure">Não é preciso estar em crise para começar. Buscar terapia é um ato de cuidado — e o primeiro passo já é uma vitória.</p>
+  <a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-lt" target="_blank" rel="noopener">Reservar meu horário</a>
+</section>
+
+<footer>
+  <div class="f-grid">
+    <div>
+      <div class="f-brand-name">Elísia Almeida</div>
+      <p class="f-brand-desc">Psicóloga clínica especialista em Psicoterapia Clínica, TCC, Neuropsicologia e Neurociência. Natal - RN.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Menu</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="abordagens.html">Abordagem</a></li>
+        <li><a href="atendimento.html">Especialidade</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Contato</div>
+      <div class="f-contact">
+        <a href="https://wa.me/5584996016500" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11 19.79 19.79 0 0 1 1.61 2.38 2 2 0 0 1 3.58.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l1.49-1.49a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +55 (84) 9 9601-6500
+        </a>
+        <a href="https://instagram.com/psielisiaalmeida" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @psielisiaalmeida
+        </a>
+        <a href="https://www.linkedin.com/in/el%C3%ADsia-almeida-1b5b2143/" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Elísia Almeida
+        </a>
+        <a href="https://www.facebook.com/elisia.almeida.3" class="f-contact-item" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          /elisia.almeida
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span class="f-copy">© 2026 Elísia Almeida. Todos os direitos reservados.</span>
+    <span class="f-copy">Psicóloga · CRP 17/4079</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5584996016500?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="wa-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('nav').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
